@@ -90,14 +90,14 @@ app.post("/blogs", function(req,res){
 //show Routes
 
 app.get("/blogs/:id", function(req,res){
-  Blog.findById( req.params.id , funtion(err, foundblog){
+  Blog.findById( req.params.id , function(err, foundblog){
     if(err)
         console.log(err);
     else{
        res.render("view", {blog: foundblog});
      }
    });
-});*/
+});
 
 //Update Routes
 
