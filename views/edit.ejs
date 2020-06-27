@@ -1,1 +1,23 @@
-<h1>Edit Page</h1>
+
+<%- include("partials/header")%>
+
+<h1>Edit Photo</h1>
+
+<form action="/blogs/<%=blog._id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+	<label>
+		Title:
+    	<input type="text" name="title" value="<%=blog.title%>">
+	</label>
+	<label>
+		Upload image:
+    	<input type="file" name="uploaded" value="<%=blog.image%>">
+	</label>
+	<label>
+		Desciption:
+		<input type="text" name="description" value="<%=blog.description%>">
+	</label>
+
+	<button>Submit</button>
+</form>
+
+<%- include("partials/footer")%>

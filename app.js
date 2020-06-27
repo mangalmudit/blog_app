@@ -74,9 +74,9 @@ app.get("/blogs",function(req,res){
 });
 
 //New Routes
-//app.get("/blogs/new", function(req,res){
-  //       res.render("new");
-});
+app.get("/blogs/new", function(req,res){
+     res.render("new");
+   });
 
 app.post("/blogs", function(req,res){
     Blog.create(req.body.blog, function(err, newblog){
@@ -212,11 +212,8 @@ function isAuth(req, res, next){
     {
     	res.redirect("/login");
     }
-}
-app.listen(port, function(err){
-  if(err)
-    console.log(err);
-  else
-    console.log("Server has stared");
- }
-);
+};
+
+app.listen(port,function(){
+  console.log("Server is running");
+});
